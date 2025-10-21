@@ -1,0 +1,99 @@
+<div class="container mt-5">
+  <div class="card shadow p-4 rounded-4">
+    <h3 class="text-center mb-4 text-primary fw-bold">Document Form</h3>
+
+    <form>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="customerName" class="form-label" name="customerName" >Customer Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="customerName"
+            name="customerName"
+            [(ngModel)]="documentObj.coustomerName"
+            placeholder="Enter customer name"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <label for="mobileNo" class="form-label" name="mobileNo" >Mobile No</label>
+          <input
+            type="text"
+            class="form-control"
+            id="mobileNo"
+            name="mobileNo"
+            [(ngModel)]="documentObj.mobileNo"
+            placeholder="Enter mobile number"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="email" class="form-label" name="email" >Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="documentObj.email"
+            placeholder="Enter email"
+          />
+        </div>
+
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="documentTypeId" class="form-label">Document Type</label>
+          <select class="form-select" id="documentTypeId" name="documentTypeId" [(ngModel)]="documentObj.documentTypeId">
+            <option selected disabled>Select document type</option>
+            @for (item of typeList |async; track $index) {
+                <option [value]="item.typeId">{{item.typeName}}</option>
+            }
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="documentStateId" class="form-label">Document State</label>
+          <select class="form-select" id="documentStateId" name="documentStateId" [(ngModel)]="documentObj.documentStateId">
+            <option selected disabled>Select document state</option>
+            @for (item of stateList|async; track $index) {
+                <option [value]="item.stateId">{{item.stateName}}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label" >Message</label>
+        <textarea
+          class="form-control"
+          id="message"
+          name="message"
+          rows="3"
+          [(ngModel)]="documentObj.message"
+          placeholder="Enter message"
+        ></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="resolution" class="form-label">Resolution</label>
+        <textarea
+          class="form-control"
+          id="resolution"
+          name="resulation"
+          rows="2"
+          [(ngModel)]="documentObj.resulation"
+          placeholder="Enter resolution"
+        ></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" (click)="onSave()" class="btn btn-success px-4 me-2">Save</button>
+        <button type="reset" class="btn btn-secondary px-4">Clear</button>
+      </div>
+    </form>
+  </div>
+</div>
