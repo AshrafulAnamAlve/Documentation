@@ -44,13 +44,13 @@ This project allows users to **create, view, edit, and delete** document records
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home](./Home.png)
+![Home](./Home.PNG)
 
 ### ➕ Create Page
-![Create](./Create.png)
+![Create](./Create.PNG)
 
 ### ✏️ Edit Page
-![Edit](./Edit.png)
+![Edit](./Edit.PNG)
 
 > 💡 **Tip:** Keep your screenshots inside a folder named `screenshots` in your project root.  
 > Example:
